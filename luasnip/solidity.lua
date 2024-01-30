@@ -7,7 +7,7 @@ local fmt = require 'luasnip.extras.fmt'.fmt
 local rep = require 'luasnip.extras'.rep
 
 local licenseChoice = function(pos)
-  return c(pos, { t('UNLICENSED'), t('MIT'), t('AGPL-3.0-only') })
+  return c(pos, { t('UNLICENSED'), t('MIT'), t('GPL-2.0-or-later'), t('AGPL-3.0-only') })
 end
 
 return {
@@ -74,7 +74,7 @@ return {
   ),
   s(
     'ldu',
-    fmt('emit log_named_decimal_uint("{}", {});', { i(1), rep(1) })
+    fmt('emit log_named_decimal_uint("{}", {}, {});', { i(1), rep(1), c(2, { t('18'), t('6'), t('8') }) })
   ),
   s(
     'rr',
@@ -126,8 +126,12 @@ vm.stopPrank();]], { i(1), i(2) })
  * @dev {1}
  */]], { i(1) })),
   s('ic', fmt('import {{console2 as console}} from "forge-std/console2.sol";{}', { i(0) })),
-  s('mem', fmt('/// @solidity memory-safe-assembly{}', { i(0) })),
+  s('mem', fmt([[/// @solidity memory-safe-assembly
+assembly {{
+    {}
+}}{}]], { i(1), i(0) })),
   s('co', fmt('console.log("{}");{}', { i(1), i(0) })),
+  s('cb', fmt('console.log("{}: %s", {} ? "true" : "false");{}', { i(1), rep(1), i(0) })),
   s('sc',
 
     fmt(
@@ -161,6 +165,12 @@ vm.stopPrank();]], { i(1), i(2) })
 
     )
 
+  ),
+  s(
+    'fori',
+    fmt([[for (uint i = 0; i < {}; i++) {{
+    {}
+}}]], { i(1), i(0) })
   )
 
 }, {

@@ -30,6 +30,8 @@ packer.startup(function(use)
 
   use 'vyperlang/vim-vyper'
 
+  use 'mattdf/vim-yul'
+
   use {
     'nvim-lualine/lualine.nvim', -- status line
     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
@@ -38,7 +40,8 @@ packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'             -- mark git changes
   use 'kyazdani42/nvim-web-devicons'        -- File icons
 
-  use 'Louis-Amas/noir-vim-support'         -- Noir Syntax
+  use 'lark-parser/vim-lark-syntax'
+  use 'Louis-Amas/noir-vim-support' -- Noir Syntax
 
   -- Tree Sitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -75,7 +78,7 @@ packer.startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
-    tag = '0.1.2'
+    tag = '0.1.5'
   }
   use 'nvim-telescope/telescope-file-browser.nvim'
 
