@@ -9,7 +9,7 @@ local rep = require 'luasnip.extras'.rep
 return {
   s(
     'p',
-    fmt('println!("{}: {{{}}}");', { i(1), rep(1) })
+    fmt('println!("{}: {{}}", {});', { i(1), rep(1) })
   )
 }, {
 

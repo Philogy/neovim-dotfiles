@@ -69,8 +69,8 @@ end)
 keymap.set('n', '<leader>m', ':Mason<CR>', opts) -- open Mason UI
 
 -- Spell checking
-keymap.set('n', '<leader>sr', function() vim.opt_local.spelllang = nil end, opts)
-keymap.set('n', '<leader>se', function() vim.opt_local.spelllang = 'en_us' end, opts)
+-- keymap.set('n', '<leader>sr', function() vim.opt_local.spelllang = nil end, opts)
+-- keymap.set('n', '<leader>se', function() vim.opt_local.spelllang = 'en_us' end, opts)
 
 keymap.set('n', '<leader>q', function()
   vim.cmd('wa')

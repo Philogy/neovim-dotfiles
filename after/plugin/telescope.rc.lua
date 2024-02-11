@@ -71,3 +71,4 @@ local open_filebrowser = function()
 end
 vim.keymap.set('n', '<C-n>', open_filebrowser, opts)
 vim.keymap.set('n', '<CR>', open_filebrowser, opts)
+

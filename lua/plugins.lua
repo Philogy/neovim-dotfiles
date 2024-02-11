@@ -66,7 +66,13 @@ packer.startup(function(use)
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/nvim-cmp' -- Completion
 
-  use 'jose-elias-alvarez/null-ls.nvim'
+  use {
+    'nvimdev/guard.nvim',
+    requires = {
+        'nvimdev/guard-collection',
+    },
+  }
+
   use 'MunifTanjim/prettier.nvim'
   use 'rust-lang/rust.vim'
 

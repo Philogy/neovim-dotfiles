@@ -13,7 +13,8 @@ vim.filetype.add({
   extension = {
     huff = 'huff',
     yul = 'yul',
-    nr = 'rust'
+    nr = 'rust',
+    balls = 'balls'
   }
 })
 
@@ -23,3 +24,4 @@ setup_filetype('python', { shiftwidth = 4 })
 setup_filetype('noir', { shiftwidth = 4 })
 setup_filetype('yul', { shiftwidth = 4 })
 setup_filetype('c', { shiftwidth = 4 })
+setup_filetype('balls', { shiftwidth = 4 })

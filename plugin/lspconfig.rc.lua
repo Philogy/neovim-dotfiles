@@ -56,10 +56,3 @@ lsp.solidity.setup({
 lsp.pyright.setup({
   on_attach = on_attach,
 })
-
-lsp.beancount.setup({
-  on_attach = on_attach,
-  init_options = {
-    journal_file = '~/Documents/ddt-accounting/Main.beancount',
-  },
-})
