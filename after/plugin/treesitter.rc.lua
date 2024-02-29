@@ -4,6 +4,19 @@ if (not status) then
   return
 end
 
+
+local parser_config = require 'nvim-treesitter.parsers'.get_parser_configs()
+parser_config.balls = {
+  install_info = {
+    url = 'https://github.com/Philogy/tree-sitter-balls',
+    files = { 'src/parser.c' },
+    branch = 'main',
+    generate_requires_npm = true,          -- if stand-alone parser without npm dependencies
+    requires_generate_from_grammar = true, -- if folder contains pre-generated src/parser.c
+  }
+}
+
+
 ts.setup {
   highlight = {
     enable = true
@@ -23,6 +36,7 @@ ts.setup {
     'beancount',
     'rust',
     'nix',
-    'lua'
+    'lua',
+    'balls'
   }
 }

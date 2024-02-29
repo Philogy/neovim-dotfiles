@@ -53,7 +53,7 @@ vim.keymap.set('n', '<leader>f', function() builtin.find_files({ hidden = false 
 vim.keymap.set('n', '<leader>o', function() builtin.oldfiles(normal) end, opts)
 vim.keymap.set('n', '<leader>pF', function() builtin.find_files({ hidden = true }) end, opts)
 vim.keymap.set('n', '<leader>r', function() builtin.live_grep({ hidden = true }) end, opts)
-vim.keymap.set('n', 'gd', builtin.lsp_definitions, opts)
+vim.keymap.set('n', 'gd', function() builtin.lsp_definitions(normal) end, opts)
 vim.keymap.set('n', 'gn', function() builtin.diagnostics() end, opts)
 vim.keymap.set('n', 'gr', function() builtin.lsp_references() end, opts)
 
@@ -71,4 +71,3 @@ local open_filebrowser = function()
 end
 vim.keymap.set('n', '<C-n>', open_filebrowser, opts)
 vim.keymap.set('n', '<CR>', open_filebrowser, opts)
-

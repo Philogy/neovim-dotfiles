@@ -1,9 +1,12 @@
 local guard = require('guard')
 local ft = require('guard.filetype')
 
-ft("lua"):fmt('lsp'):append('stylua')
+ft('lua'):fmt('lsp')
+ft('typescript,javascript,typescriptreact'):fmt('prettier')
 
-require('guard').setup {
+ft('python'):fmt('autopep8')
+
+guard.setup({
   fmt_on_save = true,
-  lsp_as_default_formatter = true,
-}
+  lsp_as_default_formatter = false,
+})

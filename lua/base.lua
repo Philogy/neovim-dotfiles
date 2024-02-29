@@ -31,7 +31,7 @@ vim.opt.wrap = true -- No wrap lines
 vim.opt.linebreak = true
 vim.opt.backspace = 'start,eol,indent'
 vim.opt.path:append { '**' } -- Finding files - Search down into subfolders
--- vim.opt.wildignore:append { '*/node_modules/*' }
+vim.opt.wildignore:append { '*/node_modules/*' }
 vim.opt.termguicolors = true
 
 -- Show symbols for specific spaces etc.
