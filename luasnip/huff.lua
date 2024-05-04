@@ -30,6 +30,10 @@ return {
     fmt(
       [[
 #define macro MAIN() = takes(0) returns(0) {{
+    _MAIN(returndatasize)
+}}
+
+#define macro _MAIN(z0) = takes(0) returns(0) {{
     {}
 }}]]
       ,
@@ -42,6 +46,12 @@ return {
     'const',
     fmt('#define constant {} = 0x{}', { i(1), i(2) }),
     {}
+  ),
+  s(
+    'bal',
+    fmt([[// balls-insert-start
+{}
+// balls-insert-end]], { i(0) }), {}
   )
 }, {
 

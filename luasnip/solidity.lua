@@ -103,19 +103,6 @@ return {
 ]],
       { i(1), i(2) })
   ),
-  s(
-    't',
-    fmt([[function test_{}() public {} {{
-    {}
-
-}}]], { i(1), i(2), i(3) })
-  ),
-  s('ft',
-    fmt([[function test_fuzzing{}({}) public {} {{
-    {}
-
-}}]], { i(1), i(2), i(3), i(4) })
-  ),
   s('pr',
     fmt([[vm.startPrank({});
 {}
@@ -126,10 +113,10 @@ vm.stopPrank();]], { i(1), i(2) })
  * @dev {1}
  */]], { i(1) })),
   s('ic', fmt('import {{console2 as console}} from "forge-std/console2.sol";{}', { i(0) })),
-  s('mem', fmt([[/// @solidity memory-safe-assembly
-assembly {{
+  s('asm', fmt([[assembly ("memory-safe") {{
     {}
 }}{}]], { i(1), i(0) })),
+  s('c', fmt('console.log("{}: %s", {});{}', { i(1), rep(1), i(0) })),
   s('co', fmt('console.log("{}");{}', { i(1), i(0) })),
   s('cb', fmt('console.log("{}: %s", {} ? "true" : "false");{}', { i(1), rep(1), i(0) })),
   s('sc',
