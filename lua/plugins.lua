@@ -69,7 +69,7 @@ packer.startup(function(use)
   use {
     'nvimdev/guard.nvim',
     requires = {
-        'nvimdev/guard-collection',
+      'nvimdev/guard-collection',
     },
   }
 
@@ -84,7 +84,7 @@ packer.startup(function(use)
   use {
     'nvim-telescope/telescope.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
-    tag = '0.1.5'
+    tag = '0.1.6'
   }
   use 'nvim-telescope/telescope-file-browser.nvim'
 

@@ -53,9 +53,19 @@ vim.keymap.set('n', '<leader>f', function() builtin.find_files({ hidden = false 
 vim.keymap.set('n', '<leader>o', function() builtin.oldfiles(normal) end, opts)
 vim.keymap.set('n', '<leader>pF', function() builtin.find_files({ hidden = true }) end, opts)
 vim.keymap.set('n', '<leader>r', function() builtin.live_grep({ hidden = true }) end, opts)
-vim.keymap.set('n', 'gd', function() builtin.lsp_definitions(normal) end, opts)
 vim.keymap.set('n', 'gn', function() builtin.diagnostics() end, opts)
-vim.keymap.set('n', 'gr', function() builtin.lsp_references() end, opts)
+vim.keymap.set('n', 'gR', function() builtin.lsp_references() end, opts)
+vim.keymap.set('n', 'gd', function()
+  builtin.lsp_definitions({
+    initial_mode = 'normal'
+  })
+end, opts)
+vim.keymap.set('n', 'gi', function()
+  builtin.lsp_implementations({
+    initial_mode = 'normal',
+    jump_type = 'never'
+  })
+end, opts)
 
 vim.keymap.set('n', '<leader>b', function()
   builtin.buffers({ ignore_current_buffer = true, sort_mru = true })

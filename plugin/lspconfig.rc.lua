@@ -6,8 +6,8 @@ local on_attach = function(_, bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
 
   vim.keymap.set('n', 'gD', function() vim.lsp.buf.declaration() end, opts)
-  vim.keymap.set('n', 'gi', function() vim.lsp.buf.implementation() end, opts)
   vim.keymap.set('n', '<C-h>', function() vim.lsp.buf.hover() end, opts)
+  vim.keymap.set('n', 'gr', function() vim.lsp.buf.rename() end, opts)
 end
 
 
@@ -27,7 +27,14 @@ lsp.tsserver.setup({
 })
 
 lsp.rust_analyzer.setup {
-  on_attach = on_attach
+  on_attach = on_attach,
+  settings = {
+    ["rust-analyzer"] = {
+      rustfmt = {
+        extraArgs = { "+nightly", },
+      },
+    }
+  }
 }
 
 lsp.lua_ls.setup({
