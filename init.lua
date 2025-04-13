@@ -1,6 +1,0 @@
-require('base')
-require('highlights')
-require('maps')
-require('plugins')
-require('filetypes')
-require('helpers')
