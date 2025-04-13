@@ -1,0 +1,7 @@
+require("background")
+require("base")
+require("clipboard")
+require("filetypes")
+require("lsp-config")
+require("plugins")
+require("remap")
