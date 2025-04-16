@@ -18,6 +18,8 @@ local function menus_and_navigation(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  -- File tree
+  use { "nvim-tree/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons" } }
   -- Autocompletion menus
   use "hrsh7th/nvim-cmp"
   -- Path-based completion for cmp.
@@ -44,6 +46,10 @@ local function style(use)
   use "lukas-reineke/indent-blankline.nvim"
   -- Main theme
   use { "uloco/bluloco.nvim", requires = { "rktjmp/lush.nvim" } }
+  -- Status line
+  use { "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } }
+  -- In-editor git change marker & git blame
+  use "lewis6991/gitsigns.nvim"
 end
 
 local function language_support(use)
@@ -55,6 +61,13 @@ local function language_support(use)
   use { "williamboman/mason.nvim" }
   -- LSP Status indicator
   use { "j-hui/fidget.nvim" }
+  -- Formatters on save
+  use {
+    "nvimdev/guard.nvim",
+    requires = {
+      "nvimdev/guard-collection",
+    },
+  }
 end
 
 require('packer').startup(function(use)

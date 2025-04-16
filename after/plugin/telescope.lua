@@ -1,5 +1,7 @@
 local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>f', function() builtin.git_files({ show_untracked = true }) end, { desc = 'Telescope find git files' })
+vim.keymap.set('n', '<leader>f', function() builtin.git_files({ show_untracked = true, use_git_root = false }) end, { desc = 'Telescope find files' })
+vim.keymap.set('n', '<leader>pf', function() builtin.git_files({ show_untracked = true }) end, { desc = 'Telescope find files' })
 vim.keymap.set('n', '<leader>ph', function() builtin.find_files({ no_ignore = true, hidden = true }) end, { desc = 'Telescope find hidden/dotfiles files' })
 vim.keymap.set('n', '<leader>r', function() builtin.live_grep({ hidden = true }) end, { desc = 'Telescope live grep' })
 vim.keymap.set('n', '<leader>o', builtin.oldfiles, { desc = 'Telescope recent files' })
+vim.keymap.set("n", "\\\\b", builtin.buffers)

@@ -1,3 +1,11 @@
+local default_bindins_to_remove = {
+  {"n", "gri"},
+  {"n", "grr"},
+  {"x", "gra"},
+  {"n", "gra"},
+  {"n", "grn"}
+}
+
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(e)
     local opts = { buffer = e.buf }
@@ -12,6 +20,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>ih", function ()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
     end, opts)
+
+    for _, binding in ipairs(default_bindins_to_remove) do
+      local mode = binding[1]
+      local key = binding[2]
+      if vim.fn.maparg(key, mode) ~= "" then
+        vim.keymap.del(mode, key)
+      end
+    end
 
     vim.lsp.inlay_hint.enable()
   end
