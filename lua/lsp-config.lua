@@ -1,9 +1,9 @@
 local default_bindins_to_remove = {
-  {"n", "gri"},
-  {"n", "grr"},
-  {"x", "gra"},
-  {"n", "gra"},
-  {"n", "grn"}
+  { "n", "gri" },
+  { "n", "grr" },
+  { "x", "gra" },
+  { "n", "gra" },
+  { "n", "grn" }
 }
 
 vim.api.nvim_create_autocmd("LspAttach", {
@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     vim.keymap.set("n", "<leader>e", function()
       vim.diagnostic.open_float()
     end, opts)
-    vim.keymap.set("n", "<leader>ih", function ()
+    vim.keymap.set("n", "<leader>ih", function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
     end, opts)
 
@@ -51,3 +51,5 @@ vim.lsp.enable("lua_ls")
 vim.lsp.enable("zls")
 vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("solidity_ls_nomicfoundation")
+vim.lsp.enable("pyright")
+vim.lsp.enable("ts_ls")

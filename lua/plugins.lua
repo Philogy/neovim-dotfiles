@@ -1,8 +1,8 @@
 local ensure_packer = function()
   local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
     vim.cmd [[packadd packer.nvim]]
     return true
   end
@@ -16,7 +16,7 @@ local function menus_and_navigation(use)
   -- File search menu
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.8',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { { 'nvim-lua/plenary.nvim' } }
   }
   -- File tree
   use { "nvim-tree/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons" } }
@@ -39,6 +39,8 @@ local function extra_shortcuts(use)
   use { "kylechui/nvim-surround", tag = "*" }
   -- Automatically close pairs.
   use "windwp/nvim-autopairs"
+  -- Snippets
+  use { "L3MON4D3/LuaSnip" }
 end
 
 local function style(use)
