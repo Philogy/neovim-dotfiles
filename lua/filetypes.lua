@@ -13,7 +13,8 @@ vim.filetype.add({
   extension = {
     huff = "huff",
     balls = "balls",
-    glsl = "glsl"
+    glsl = "glsl",
+    sei = "sensei"
   }
 })
 
@@ -26,3 +27,4 @@ setup_filetype("balls", { shiftwidth = 4 })
 setup_filetype("javascript", { shiftwidth = 2 })
 setup_filetype("typescript", { shiftwidth = 2 })
 setup_filetype("beancount", { shiftwidth = 2 })
+setup_filetype("sensei", { shiftwidth = 4 })
