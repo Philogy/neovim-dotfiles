@@ -24,6 +24,7 @@ ts.setup {
     "lua",
     "comment",
     "lalrpop",
-    "zig"
+    "zig",
+    "c"
   }
 }

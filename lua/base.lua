@@ -18,7 +18,6 @@ vim.opt.breakindent = true
 vim.opt.termguicolors = true
 vim.opt.winblend = 0
 vim.opt.wildoptions = "pum"
-vim.opt.background = "dark"
 
 -- search / cmd
 vim.opt.ignorecase = true -- ignore

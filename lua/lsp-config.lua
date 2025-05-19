@@ -47,9 +47,20 @@ vim.lsp.config("lua_ls", {
   }
 })
 
+vim.lsp.config("rust_analyzer", {
+  settings = {
+    ["rust-analyzer"] = {
+      rustfmt = {
+        extraArgs = { "+nightly", },
+      },
+    }
+  }
+})
+
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("zls")
 vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("solidity_ls_nomicfoundation")
 vim.lsp.enable("pyright")
 vim.lsp.enable("ts_ls")
+vim.lsp.enable("clangd")

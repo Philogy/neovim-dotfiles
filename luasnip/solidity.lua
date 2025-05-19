@@ -62,49 +62,6 @@ return {
     )
   ),
   s(
-    'lb',
-    fmt('emit log_named_bytes("{}", {});', { i(1), rep(1) })
-  ),
-  s(
-    'ly',
-    fmt('emit log_named_bytes32("{}", {});', { i(1), rep(1) })
-  ),
-  s(
-    'lu',
-    fmt('emit log_named_uint("{}", {});', { i(1), rep(1) })
-  ),
-  s(
-    'ldu',
-    fmt('emit log_named_decimal_uint("{}", {});', { i(1), rep(1) })
-  ),
-  s(
-    'rr',
-    fmt('returndatacopy(returndatasize(), returndatasize(), {})', { i(0) })
-  ),
-  s(
-    'logs',
-    fmt(
-      [[emit log_named_string("{}", {});
-
-]],
-      { i(1), rep(1) }
-    )
-  ),
-  s(
-    'la',
-    fmt([[emit log_named_address("{}", {});
-
-]],
-      { i(1), rep(1) })
-  ),
-  s(
-    'eq',
-    fmt([[assertEq({}, {});
-
-]],
-      { i(1), i(2) })
-  ),
-  s(
     't',
     fmt([[function test_{}() public {} {{
     {}
@@ -139,12 +96,16 @@ vm.stopPrank();]], { i(1), i(2) })
     i(0)
   })),
   s('ic', fmt('import {{console}} from "forge-std/console.sol";{}', { i(0) })),
+  s('ics', fmt('import {{safeconsole as console}} from "forge-std/safeconsole.sol";', {})),
+  s('ivm',
+    fmt('import {{Vm}} from "forge-std/Vm.sol";Vm constant vm = Vm(0x7109709ECfa91a80626fF3989D68f67F5b1DD12D);', {})),
   s('if', fmt('import {{FormatLib}} from "super-sol/libraries/FormatLib.sol";{}', { i(0) })),
   s('uf', fmt('using FormatLib for *;{}', { i(0) })),
   s('mem', fmt('/// @solidity memory-safe-assembly\n{}', { i(0) })),
   s('co', fmt('console.log("{}");{}', { i(1), i(0) })),
   s('c', fmt('console.log("{}: %s", {}{});', { i(1), rep(1), c(2, { t(""), t(".toStr()"), t(".fmtD()") }) })),
-  s('cb', fmt('console.log("{}: %x", uint({}));', { i(1), rep(1), })),
+  s('cx', fmt('console.log("{}: %x", uint({}));', { i(1), rep(1), })),
+  s('cb', fmt('console.logBytes({});', { i(1), })),
   s('asm', fmt("assembly {}{{\n\t{}\n}}", { c(1, { t(""), t("(\"memory-safe\") ") }), i(0) })),
   s('for', fmt([[for (uint256 {} = {}; {} < {}; {}{}) {{
     {}
@@ -253,7 +214,8 @@ for (uint256 {} = 0; {} < {}.length; {}++) {{
   s(
     'expect_revert',
     fmt('/// forge-config: default.allow_internal_expect_revert = true', {})
-  )
+  ),
+  s('uconst', fmt('uint256 constant {} = {};{}', { i(1), i(2), i(0) }))
 }, {
 
 }

@@ -139,6 +139,11 @@ _G.packer_plugins = {
     path = "/Users/philogy/.local/share/nvim/site/pack/packer/start/lush.nvim",
     url = "https://github.com/rktjmp/lush.nvim"
   },
+  ["markdown-preview.nvim"] = {
+    loaded = true,
+    path = "/Users/philogy/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim",
+    url = "https://github.com/iamcco/markdown-preview.nvim"
+  },
   ["mason.nvim"] = {
     loaded = true,
     path = "/Users/philogy/.local/share/nvim/site/pack/packer/start/mason.nvim",

@@ -26,9 +26,7 @@ set_bg(get_sys_bg())
 
 vim.keymap.set("n", "<leader>td", function()
   set_bg("dark")
-  background_mode = "manual"
 end)
 vim.keymap.set("n", "<leader>tl", function()
   set_bg("light")
-  background_mode = "manual"
 end)
