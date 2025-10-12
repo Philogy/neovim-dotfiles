@@ -1,5 +1,5 @@
 -- Remap leader to <Space>
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 -- Disable moving with space.
 vim.keymap.set("n", "<Space>", "<nop>")
@@ -19,10 +19,10 @@ vim.keymap.set("t", "<A-j>", "<C-\\><C-n><C-W>j")
 vim.keymap.set("t", "<A-k>", "<C-\\><C-n><C-W>k")
 
 -- Exit Terminal
-vim.keymap.set('t', '<A-q>', '<C-\\><C-n>')
+vim.keymap.set("t", "<A-q>", "<C-\\><C-n>")
 
 -- Buffer Management
-vim.keymap.set('n', '\\c', ':bp|sp|bn|bd!<CR>') -- Kill Current Buffer
+vim.keymap.set("n", "\\c", ":bp|sp|bn|bd!<CR>") -- Kill Current Buffer
 -- Disable highlight until next search
 vim.keymap.set("n", "<leader>s", vim.cmd.nohl)
 

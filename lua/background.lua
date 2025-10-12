@@ -30,3 +30,5 @@ end)
 vim.keymap.set("n", "<leader>tl", function()
   set_bg("light")
 end)
+
+vim.cmd('colorscheme bluloco')

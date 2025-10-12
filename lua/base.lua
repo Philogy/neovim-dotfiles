@@ -13,11 +13,13 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.smarttab = true
 vim.opt.breakindent = true
+vim.opt.signcolumn = "yes" -- Ensure there's always a gab behind line numbers, whether there's diagnostics or not
 
 -- color things
 vim.opt.termguicolors = true
 vim.opt.winblend = 0
 vim.opt.wildoptions = "pum"
+vim.opt.winborder = "rounded"
 
 -- search / cmd
 vim.opt.ignorecase = true -- ignore
@@ -28,6 +30,7 @@ vim.opt.scrolloff = 5
 -- Symbols for specific spaces
 vim.opt.list = true
 vim.opt.listchars = { tab = '>-', trail = '·' }
+
 
 -- Remember Undo
 vim.opt.undofile = true
