@@ -1,6 +1,7 @@
 local options = {
     keymaps = {
-        ["<leader>s"] = { "actions.parent", mode = "n" },
+        ["<leader>h"] = { "actions.parent", mode = "n" },
+        ["<C-n>"] = { "actions.close", mode = "n" }
     },
     skip_confirm_for_simple_edits = true
 }
@@ -11,10 +12,8 @@ local function config()
 end
 
 return {
-  "stevearc/oil.nvim",
-  ---@module "oil"
-  ---@type oil.SetupOpts
-  dependencies = { { "nvim-tree/nvim-web-devicons", opts = {} } },
-  config = config,
-  lazy = false,
+    "stevearc/oil.nvim",
+    dependencies = { { "nvim-tree/nvim-web-devicons", opts = {} } },
+    config = config,
+    lazy = false,
 }
