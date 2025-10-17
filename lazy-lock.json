@@ -1,6 +1,8 @@
 {
+  "LuaSnip": { "branch": "master", "commit": "581d1c42b7bdb5f469ba70ed61c8600357707922" },
   "blink.cmp": { "branch": "main", "commit": "327fff91fe6af358e990be7be1ec8b78037d2138" },
   "bluloco.nvim": { "branch": "main", "commit": "afc95b6696a0a568a5a186a7e563f6c9947d0d79" },
+  "gitsigns.nvim": { "branch": "main", "commit": "1ee5c1fd068c81f9dd06483e639c2aa4587dc197" },
   "harpoon": { "branch": "harpoon2", "commit": "ed1f853847ffd04b2b61c314865665e1dadf22c7" },
   "indent-blankline.nvim": { "branch": "master", "commit": "005b56001b2cb30bfa61b7986bc50657816ba4ba" },
   "lazy.nvim": { "branch": "main", "commit": "1ea3c4085785f460fb0e46d2fe1ee895f5f9e7c1" },

@@ -1,4 +1,5 @@
 local function config()
+    vim.g._ts_force_sync_parsing = true
     require("nvim-treesitter.configs").setup {
         highlight = {
             enable = true

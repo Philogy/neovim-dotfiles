@@ -1,6 +1,6 @@
 local options = {
     keymaps = {
-        ["<leader>h"] = { "actions.parent", mode = "n" },
+        ["<C-h>"] = { "actions.parent", mode = "n" },
         ["<C-n>"] = { "actions.close", mode = "n" }
     },
     skip_confirm_for_simple_edits = true

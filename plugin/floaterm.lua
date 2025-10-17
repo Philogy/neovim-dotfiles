@@ -8,22 +8,23 @@ local function close_window(state)
         return true
     end
 
+    if vim.api.nvim_win_is_valid(state.win) then
+        vim.api.nvim_win_hide(state.win)
+    end
+
     return false
 end
 
 local function process_window_toggle(state)
-    state.win = state.win or -1
-    state.buf = state.buf or -1
-
     if close_window(state) then
         return true
     end
 
-    local width = math.floor(vim.o.columns * 0.8)
-    local height = math.floor(vim.o.lines * 0.8)
+    local width = math.floor(vim.o.columns * 0.9)
+    local height = math.floor(vim.o.lines * 0.9)
 
     local col = math.floor((vim.o.columns - width) / 2)
-    local row = math.floor((vim.o.lines - height) / 2)
+    local row = math.max(math.floor((vim.o.lines - height) / 2) - 2, 0)
 
     if not vim.api.nvim_buf_is_valid(state.buf) then
         state.buf = vim.api.nvim_create_buf(false, true)
@@ -42,7 +43,7 @@ local function process_window_toggle(state)
     end
 
     if vim.bo[state.buf].buftype ~= "terminal" then
-        vim.cmd('term')
+        vim.cmd.term()
     end
 
     vim.api.nvim_set_current_win(state.win)
