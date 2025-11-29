@@ -1,0 +1,7 @@
+{
+  "Lua.format.enable": true,
+  "Lua.format.defaultConfig": {
+    "indent_style": "space",
+    "indent_size": "4"
+  }
+}

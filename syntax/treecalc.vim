@@ -14,7 +14,7 @@ syn match treelangComment "//.*$"
 " Keywords / directives
 " -----------------------------
 syn keyword treelangKeyword    fn
-syn match   treelangDirective  /#num\|#show\|#viz/
+syn match   treelangDirective  /#num\|#show\|#viz\|#bytes/
 
 " -----------------------------
 " Operators / punctuation / special

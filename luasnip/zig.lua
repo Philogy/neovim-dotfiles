@@ -11,6 +11,14 @@ return {
     'p',
     fmt('std.debug.print("{}: {{{}}}\\n", .{{ {} }});', { rep(1), c(2, { i(2), t("") }), i(1) })
   ),
+  s(
+    'pr',
+    fmt('std.debug.print("{}\\n", .{{  }});', { i(1) })
+  ),
+  s(
+    'std',
+    fmt('const std = @import("std");{}', { i(0) })
+  ),
 }, {
 
 }

@@ -28,3 +28,8 @@ vim.keymap.set("n", "<leader>s", vim.cmd.nohl)
 
 -- Temporary explorer access
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
+
+-- Quick fix list navigation
+vim.keymap.set("n", "\\n", ":cnext<CR>")
+vim.keymap.set("n", "\\p", ":cprev<CR>")
+vim.keymap.set("n", "\\l", ":cclose<CR>")

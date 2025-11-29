@@ -1,0 +1,16 @@
+-- Hide cmdline unless a command is active
+-- vim.opt.cmdheight = 0
+
+-- -- Optional: If you want to dynamically toggle cmdheight for certain events
+-- -- (e.g., force show for certain messages or plugins), you can do:
+-- vim.api.nvim_create_autocmd("CmdlineEnter", {
+--   callback = function()
+--     vim.opt.cmdheight = 1
+--   end,
+-- })
+--
+-- vim.api.nvim_create_autocmd("CmdlineLeave", {
+--   callback = function()
+--     vim.opt.cmdheight = 0
+--   end,
+-- })

@@ -1,0 +1,3 @@
+return {
+  "vyperlang/vim-vyper"
+}
